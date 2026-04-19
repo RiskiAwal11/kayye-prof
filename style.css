@@ -4,88 +4,99 @@ body {
   font-family: 'Inter', system_ui, sans-serif;
 }
 
+/* Hi Text */
 .hi-text {
-  font-size: 8.5rem;
-  line-height: 0.8;
+  font-size: 9rem;
+  line-height: 0.75;
   font-weight: 900;
-  background: linear-gradient(90deg, #e0e7ff 0%, #c4d0ff 50%, #a5b4fc 100%);
+  background: linear-gradient(90deg, #e0e7ff 0%, #c4d0ff 45%, #a5b4fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
-  margin: 2.5rem 0 0.5rem;
+  margin: 2rem 0 0.5rem;
+  letter-spacing: -0.05em;
 }
 
+/* Section Title */
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2.85rem;
   font-weight: 700;
   letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+  color: #f1f5f9;
 }
 
-.interest-card {
-  background-color: #18181b;
-  border: 1px solid #27272a;
+/* Glass Card dengan Shadow yang Lebih Kuat & Cantik */
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 1.75rem;
   padding: 2rem;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),     /* shadow utama */
+    0 10px 15px -5px rgba(0, 0, 0, 0.4),      /* shadow tambahan */
+    inset 0 2px 0 rgba(255, 255, 255, 0.15);   /* highlight dalam */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(165, 180, 252, 0.45);
+  transform: translateY(-12px);
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 0, 0, 0.7),
+    0 15px 25px -8px rgba(0, 0, 0, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Interest Card (yang Bahasa, Coding, Astronomi) */
+.interest-card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.75rem;
+  padding: 2rem;
+  transition: all 0.4s ease;
 }
 
 .interest-card:hover {
   transform: translateY(-10px);
-  border-color: #6366f1;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+  border-color: rgba(165, 180, 252, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.55);
 }
 
+/* Contact Button */
 .contact-btn {
-  background-color: white;
-  color: #18181b;
+  background-color: #ffffff;
+  color: #0f172a;
   font-weight: 600;
-  padding: 1.25rem 2rem;
+  padding: 1.4rem 2rem;
   border-radius: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  font-size: 1.125rem;
+  font-size: 1.18rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   transition: all 0.3s ease;
 }
 
 .contact-btn:hover {
-  background-color: #f4f4f5;
-  transform: translateY(-3px);
+  background-color: #f1f5f9;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
 }
 
-/* Animasi Fade-in */
+/* Fade-in Animation */
 .section-fade {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  transform: translateY(40px);
+  transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .section-fade.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Perbaikan agar responsif di HP */
-@media (max-width: 640px) {
-  .hi-text {
-    font-size: 5rem; /* Ukuran "Hi" dikecilkan sedikit di HP agar tidak memenuhi layar */
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .interest-card {
-    padding: 1.5rem;
-  }
-}
-
-/* Memastikan gambar di dalam grid tidak "meledak" keluar */
-.aspect-video {
-  aspect-ratio: 16 / 9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #09090b;
 }
