@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', system_ui, sans-serif;
+}
+
+.hi-text {
+  font-size: 8.5rem;
+  line-height: 0.8;
+  font-weight: 900;
+  background: linear-gradient(90deg, #e0e7ff 0%, #c4d0ff 50%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.interest-card {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 1.75rem;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interest-card:hover {
+  transform: translateY(-10px);
+  border-color: #6366f1;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.contact-btn {
+  background-color: white;
+  color: #18181b;
+  font-weight: 600;
+  padding: 1.25rem 2rem;
+  border-radius: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #f4f4f5;
+  transform: translateY(-3px);
+}
+
+/* Animasi Fade-in */
+.section-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

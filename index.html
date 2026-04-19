@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi, I'm Kayye</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+
+  <div class="max-w-2xl mx-auto px-6 py-12">
+
+    <!-- Hi + Foto Profil -->
+    <div class="text-center pt-8">
+      <img id="profile-img" 
+           src="assets/black_white.jpg" 
+           alt="Foto Kayye" 
+           class="w-48 h-48 mx-auto rounded-3xl object-cover shadow-2xl border-8 border-zinc-900 transition-all duration-500">
+      
+      <h1 class="hi-text">Hi</h1>
+      <p class="text-3xl font-medium text-zinc-300 mt-2">I'm Kayye</p>
+    </div>
+
+    <!-- About Me -->
+    <div class="mt-20 section-fade">
+      <h2 class="section-title">About Me</h2>
+      <div class="glass-card p-8">
+        <p class="text-zinc-300 text-[17px] leading-relaxed">
+          Hi! I'm Kayye, a high school student with a big curiosity for the world.<br><br>
+          
+          I’m deeply interested in languages, coding, and astronomy. 
+          英語を勉強するのはとても楽しいですし、世界中の知識にアクセスしやすくなります。<br>
+          日本語を勉強しています！ アニメ、音楽、そして日本の技術が大好きです。<br>
+          Nederlandsも学び始めました — "De Nederlandse taal is erg interessant en mooi. Ik vind de cultuur ook fascinerend!"<br><br>
+          
+          In my free time, I enjoy coding small web projects using HTML, CSS, and JavaScript. 
+          Sometimes I also try making simple projects on Android Studio.<br><br>
+          
+          Astronomy is one of my biggest passions. Learning about stars, planets, galaxies, 
+          and the mysteries of the universe always amazes me.<br><br>
+          
+          Languages, coding, and astronomy — these three things make every day exciting and meaningful for me.
+        </p>
+      </div>
+    </div>
+
+    <!-- Interests -->
+    <div class="mt-24 section-fade">
+      <h2 class="section-title mb-10">Things I'm Studying About</h2>
+      
+      <div class="space-y-10">
+
+        <!-- Bahasa -->
+        <div class="interest-card">
+          <div class="flex items-center gap-4 mb-6">
+            <i class="fa-solid fa-language text-4xl text-indigo-400"></i>
+            <h3 class="text-3xl font-semibold">International Languages</h3>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center bg-zinc-800 rounded-2xl py-5">
+              <p class="font-semibold">English</p>
+              <p class="text-xs text-zinc-500 mt-1">Intermediate</p>
+            </div>
+            <div class="text-center bg-zinc-800 rounded-2xl py-5">
+              <p class="font-semibold">日本語</p>
+              <p class="text-xs text-zinc-500 mt-1">Hiragana + Katakana + basic</p>
+            </div>
+            <div class="text-center bg-zinc-800 rounded-2xl py-5">
+              <p class="font-semibold">Dutch</p>
+              <p class="text-xs text-zinc-500 mt-1">Basic</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coding -->
+        <div class="interest-card">
+          <div class="flex items-center gap-4 mb-6">
+            <i class="fa-solid fa-code text-4xl text-sky-400"></i>
+            <h3 class="text-3xl font-semibold">Coding</h3>
+          </div>
+          <p class="text-zinc-400 mb-6">
+            I'm trying to make some simple projects using HTML, CSS, JavaScript. 
+            Sometimes I also make projects on Android Studio.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-zinc-950 rounded-2xl p-4 text-center">
+              <p class="text-sm text-zinc-400 mb-2">Website</p>
+              <img src="assets/wb.png" class="rounded-xl w-full h-28 object-cover">
+            </div>
+            <div class="bg-zinc-950 rounded-2xl p-4 text-center">
+              <p class="text-sm text-zinc-400 mb-2">Basic App</p>
+              <img src="assets/ip.png" class="rounded-xl w-full h-28 object-cover">
+            </div>
+          </div>
+        </div>
+
+        <!-- Astronomi -->
+        <div class="interest-card">
+          <div class="flex items-center gap-4 mb-6">
+            <i class="fa-solid fa-star text-4xl text-amber-400"></i>
+            <h3 class="text-3xl font-semibold">Astronomy</h3>
+          </div>
+          <p class="text-zinc-400 leading-relaxed">
+            Galaxy and planet always makes me curious and interested to learn how it works in the space.
+          </p>
+          <img src="assets/astronomi.jpg" class="mt-6 rounded-2xl w-full h-40 object-cover">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Currently Learning -->
+    <div class="mt-24 section-fade">
+      <h2 class="section-title mb-8">Currently Learning</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="glass-card p-6 text-center">
+          <i class="fa-solid fa-book text-3xl text-violet-400 mb-4"></i>
+          <p class="font-medium">Japanese Grammar</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <i class="fa-solid fa-laptop-code text-3xl text-emerald-400 mb-4"></i>
+          <p class="font-medium">JavaScript Basics</p>
+        </div>
+        <div class="glass-card p-6 text-center">
+          <i class="fa-solid fa-telescope text-3xl text-orange-400 mb-4"></i>
+          <p class="font-medium">Astronomy</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Let's Talk -->
+    <div class="mt-28 text-center section-fade">
+      <h2 class="section-title mb-6">Let's Talk</h2>
+      <p class="text-zinc-400 mb-10 max-w-sm mx-auto">
+        Are you getting more interested with me in any different topics? Let's talk
+      </p>
+
+      <div class="flex flex-col gap-4 max-w-xs mx-auto">
+        <a href="mailto:kayye303@gmail.com" class="contact-btn">
+          <i class="fa-solid fa-envelope"></i>
+          Send email
+        </a>
+        <a href="https://instagram.com/reeezyy90" target="_blank" class="contact-btn bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white">
+          <i class="fa-brands fa-instagram"></i>
+          Instagram
+        </a>
+      </div>
+    </div>
+
+    <footer class="text-center text-zinc-500 text-sm mt-24 pb-10">
+      Let's talk anything with me
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
