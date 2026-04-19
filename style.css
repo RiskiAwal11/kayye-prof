@@ -65,3 +65,27 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Perbaikan agar responsif di HP */
+@media (max-width: 640px) {
+  .hi-text {
+    font-size: 5rem; /* Ukuran "Hi" dikecilkan sedikit di HP agar tidak memenuhi layar */
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .interest-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Memastikan gambar di dalam grid tidak "meledak" keluar */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #09090b;
+}
