@@ -100,3 +100,336 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================ */
+/* ORBITING PLANET SKILLS - TAMBAHAN BARU        */
+/* ============================================ */
+
+.orbit-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.solar-system {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Avatar core (matahari) - menimpa style asli dengan posisi absolute */
+.avatar-core {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255, 180, 70, 0.6), 0 0 0 3px rgba(255, 215, 120, 0.3);
+  z-index: 10;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.avatar-core:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(255, 200, 100, 0.9);
+}
+
+/* Orbit ring dekoratif */
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(100, 180, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Planet base */
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
+  margin-top: -25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s transform;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  z-index: 20;
+  background: radial-gradient(circle at 35% 35%, #2a2a4a, #1a1a2e);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.planet:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+  transition: 0.2s;
+}
+
+/* Warna khusus tiap planet */
+.planet[data-skill="HTML"] { background: radial-gradient(circle at 35% 35%, #e96228, #b94517); }
+.planet[data-skill="CSS"] { background: radial-gradient(circle at 35% 35%, #2965f1, #0f3b9e); }
+.planet[data-skill="JavaScript"] { background: radial-gradient(circle at 35% 35%, #f7df1e, #d4a900); color: #1e2a2a; }
+.planet[data-skill="日本語"] { background: radial-gradient(circle at 35% 35%, #b13e6f, #712c55); }
+
+/* Animasi orbit */
+.orbit-1 { animation: orbit1 14s linear infinite; }
+.orbit-2 { animation: orbit2 18s linear infinite reverse; }
+.orbit-3 { animation: orbit3 22s linear infinite; }
+.orbit-4 { animation: orbit4 16s linear infinite reverse; }
+
+@keyframes orbit1 {
+  0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes orbit2 {
+  0% { transform: rotate(45deg) translateX(150px) rotate(-45deg); }
+  100% { transform: rotate(405deg) translateX(150px) rotate(-405deg); }
+}
+@keyframes orbit3 {
+  0% { transform: rotate(120deg) translateX(95px) rotate(-120deg); }
+  100% { transform: rotate(480deg) translateX(95px) rotate(-480deg); }
+}
+@keyframes orbit4 {
+  0% { transform: rotate(200deg) translateX(135px) rotate(-200deg); }
+  100% { transform: rotate(560deg) translateX(135px) rotate(-560deg); }
+}
+
+/* Skill feedback container */
+.skill-feedback-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.75rem 0 1rem;
+}
+
+.skill-feedback {
+  background: rgba(10, 20, 40, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  border-radius: 40px;
+  display: inline-block;
+  font-size: 0.85rem;
+  border: 1px solid rgba(90, 180, 255, 0.4);
+  transition: 0.2s;
+}
+
+.skill-text {
+  color: #bbd9ff;
+}
+
+/* Responsive untuk HP */
+@media (max-width: 550px) {
+  .solar-system {
+    width: 280px;
+    height: 280px;
+  }
+  .planet {
+    width: 42px;
+    height: 42px;
+    margin-left: -21px;
+    margin-top: -21px;
+    font-size: 0.75rem;
+  }
+  .avatar-core {
+    width: 75px;
+    height: 75px;
+  }
+  @keyframes orbit1 {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+  @keyframes orbit2 {
+    0% { transform: rotate(45deg) translateX(125px) rotate(-45deg); }
+    100% { transform: rotate(405deg) translateX(125px) rotate(-405deg); }
+  }
+  @keyframes orbit3 {
+    0% { transform: rotate(120deg) translateX(82px) rotate(-120deg); }
+    100% { transform: rotate(480deg) translateX(82px) rotate(-480deg); }
+  }
+  @keyframes orbit4 {
+    0% { transform: rotate(200deg) translateX(112px) rotate(-200deg); }
+    100% { transform: rotate(560deg) translateX(112px) rotate(-560deg); }
+  }
+}
+
+/* ============================================ */
+/* FITUR 3: DARK/LIGHT MODE STYLES              */
+/* ============================================ */
+
+body.light-mode {
+  background: #f4f6fa;
+  color: #1e293b;
+}
+
+body.light-mode .glass-card,
+body.light-mode .interest-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1e293b;
+}
+
+body.light-mode .glass-card:hover,
+body.light-mode .interest-card:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+body.light-mode .section-title {
+  color: #0f172a;
+}
+
+body.light-mode .contact-btn {
+  background-color: #0f172a;
+  color: white;
+}
+
+body.light-mode .contact-btn.bg-zinc-800 {
+  background-color: #1e293b;
+}
+
+body.light-mode .skill-feedback {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+body.light-mode .skill-text {
+  color: #1e293b;
+}
+
+body.light-mode .planet {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================ */
+/* FITUR 2: PROGRESS BAR SKILL                  */
+/* ============================================ */
+
+.skill-progress-container {
+  margin-top: 1rem;
+}
+
+.skill-progress-item {
+  margin-bottom: 1rem;
+}
+
+.skill-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: #94a3b8;
+}
+
+.skill-progress-bar-bg {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1.2s ease-out;
+}
+
+.fill-english { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.fill-japanese { background: linear-gradient(90deg, #ec489a, #f472b6); }
+.fill-dutch { background: linear-gradient(90deg, #10b981, #34d399); }
+
+/* ============================================ */
+/* FITUR 6: TYPING EFFECT CURSOR                */
+/* ============================================ */
+
+#typingText {
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  margin-left: 4px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============================================ */
+/* FITUR 7: CONSTELLATION BACKGROUND            */
+/* ============================================ */
+
+.constellation-star {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+.constellation-line {
+  position: fixed;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: 0 0;
+}
+
+body.light-mode .constellation-line {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .constellation-star {
+  background: #1e293b;
+}
+
+/* ============================================ */
+/* FITUR 4: HOVER PROJECT CAPTION               */
+/* ============================================ */
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.75rem;
+  transition: bottom 0.3s ease;
+  text-align: center;
+  font-size: 0.75rem;
+  color: white;
+}
+
+.project-card:hover .project-overlay {
+  bottom: 0;
+}

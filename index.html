@@ -9,21 +9,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="bg-zinc-950 text-zinc-200">
+    <!-- DARK MODE TOGGLE BUTTON (pojok kanan atas) -->
+  <button id="themeToggle" class="fixed top-5 right-5 z-50 bg-zinc-800/80 backdrop-blur-sm p-3 rounded-full border border-zinc-700 hover:bg-zinc-700 transition-all duration-300">
+    <i id="themeIcon" class="fa-solid fa-moon text-yellow-300 text-xl"></i>
+  </button>
 
   <div class="max-w-2xl mx-auto px-6 py-12">
 
-    <!-- Hi + Foto Profil -->
+    <!-- ========== HERO + ORBITING PLANET (TAMBAHAN BARU) ========== -->
     <div class="text-center pt-8">
-      <img id="profile-img" 
-           src="assets/black_white.jpg" 
-           alt="Foto Kayye" 
-           class="w-48 h-48 mx-auto rounded-3xl object-cover shadow-2xl border-8 border-zinc-900 transition-all duration-500">
       
+      <!-- ORBITING PLANET SYSTEM -->
+      <div class="orbit-wrapper">
+        <div class="solar-system">
+          <!-- Avatar (matahari) -->
+          <div class="avatar-core">
+            <img id="profile-img" 
+                 src="assets/black_white.jpg" 
+                 alt="Foto Kayye" 
+                 class="w-full h-full rounded-full object-cover">
+          </div>
+
+          <!-- Orbit rings (dekoratif) -->
+          <div class="orbit-ring" style="width: 230px; height: 230px;"></div>
+          <div class="orbit-ring" style="width: 290px; height: 290px;"></div>
+          <div class="orbit-ring" style="width: 180px; height: 180px;"></div>
+          <div class="orbit-ring" style="width: 265px; height: 265px;"></div>
+
+          <!-- PLANET 1 : HTML -->
+          <div class="planet orbit-1" data-skill="HTML" data-level="Intermediate + CSS">
+            <i class="fa-brands fa-html5 text-2xl"></i>
+          </div>
+          
+          <!-- PLANET 2 : CSS -->
+          <div class="planet orbit-2" data-skill="CSS" data-level="Flex, Grid, Animations">
+            <i class="fa-brands fa-css3-alt text-2xl"></i>
+          </div>
+          
+          <!-- PLANET 3 : JavaScript -->
+          <div class="planet orbit-3" data-skill="JavaScript" data-level="DOM, Events, Logic">
+            <i class="fa-brands fa-js text-2xl"></i>
+          </div>
+          
+          <!-- PLANET 4 : Japanese -->
+          <div class="planet orbit-4" data-skill="日本語" data-level="A2 · ひらがな/カタカナ">
+            <span class="text-xl font-bold">日</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill feedback (hasil klik planet) -->
+      <div class="skill-feedback-container">
+        <div class="skill-feedback" id="skillMessage">
+          <span class="skill-text">✨ tap planet di atas ✨</span>
+        </div>
+      </div>
+
       <h1 class="hi-text">Hi</h1>
       <p class="text-3xl font-medium text-zinc-300 mt-2">I'm Kayye</p>
     </div>
 
-    <!-- About Me -->
+    <!-- About Me (asli, tidak berubah) -->
     <div class="mt-20 section-fade">
       <h2 class="section-title">About Me</h2>
       <div class="glass-card p-8">
@@ -46,7 +92,7 @@
       </div>
     </div>
 
-    <!-- Interests -->
+    <!-- Interests (asli, tidak berubah) -->
     <div class="mt-24 section-fade">
       <h2 class="section-title mb-10">Things I'm Studying About</h2>
       
@@ -75,32 +121,32 @@
         </div>
 
         <!-- Coding -->
-     <div class="interest-card">
-  <div class="flex items-center gap-4 mb-6">
-    <i class="fa-solid fa-code text-4xl text-sky-400"></i>
-    <h3 class="text-3xl font-semibold">Coding</h3>
-  </div>
-  <p class="text-zinc-400 mb-6">
-    I'm trying to make some simple projects using HTML, CSS, JavaScript. 
-    Sometimes I also make projects on Android Studio.
-  </p>
-  
-  <div class="grid grid-cols-2 gap-4">
-    <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-800">
-      <p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider font-semibold">Website</p>
-      <div class="aspect-video w-full overflow-hidden rounded-xl">
-        <img src="assets/wb.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Website Project">
-      </div>
-    </div>
-    
-    <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-800">
-      <p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider font-semibold">Basic App</p>
-      <div class="aspect-video w-full overflow-hidden rounded-xl">
-        <img src="assets/ip.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="App Project">
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="interest-card">
+          <div class="flex items-center gap-4 mb-6">
+            <i class="fa-solid fa-code text-4xl text-sky-400"></i>
+            <h3 class="text-3xl font-semibold">Coding</h3>
+          </div>
+          <p class="text-zinc-400 mb-6">
+            I'm trying to make some simple projects using HTML, CSS, JavaScript. 
+            Sometimes I also make projects on Android Studio.
+          </p>
+          
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-800">
+              <p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider font-semibold">Website</p>
+              <div class="aspect-video w-full overflow-hidden rounded-xl">
+                <img src="assets/wb.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Website Project">
+              </div>
+            </div>
+            
+            <div class="bg-zinc-950 rounded-2xl p-3 text-center border border-zinc-800">
+              <p class="text-xs text-zinc-500 mb-2 uppercase tracking-wider font-semibold">Basic App</p>
+              <div class="aspect-video w-full overflow-hidden rounded-xl">
+                <img src="assets/ip.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="App Project">
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Astronomi -->
         <div class="interest-card">
@@ -113,11 +159,20 @@
           </p>
           <img src="assets/astronomi.jpg" class="mt-6 rounded-2xl w-full h-40 object-cover">
         </div>
-
+                  <!-- RANDOM ASTRONOMY FACT (FITUR 1) -->
+          <div class="mt-6 p-4 bg-zinc-800/50 rounded-2xl border border-zinc-700">
+            <div class="flex items-center justify-between mb-3">
+              <p class="text-sm font-semibold text-amber-400"><i class="fa-solid fa-star"></i> Space Fact</p>
+              <button id="newFactBtn" class="text-xs bg-zinc-700 hover:bg-zinc-600 px-3 py-1 rounded-full transition">New Fact ✨</button>
+            </div>
+            <p id="astronomyFact" class="text-zinc-300 text-sm leading-relaxed">
+              🌌 Loading fact...
+            </p>
+          </div>
       </div>
     </div>
 
-    <!-- Currently Learning -->
+    <!-- Currently Learning (asli, tidak berubah) -->
     <div class="mt-24 section-fade">
       <h2 class="section-title mb-8">Currently Learning</h2>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -136,7 +191,33 @@
       </div>
     </div>
 
-    <!-- Let's Talk -->
+        <!-- COUNTER STATISTIK (FITUR 5) -->
+    <div class="mt-24 section-fade">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="glass-card p-5 text-center">
+          <i class="fa-solid fa-language text-2xl text-indigo-400 mb-2"></i>
+          <p class="text-2xl font-bold" id="langCount">3</p>
+          <p class="text-xs text-zinc-500">Languages</p>
+        </div>
+        <div class="glass-card p-5 text-center">
+          <i class="fa-solid fa-code text-2xl text-sky-400 mb-2"></i>
+          <p class="text-2xl font-bold" id="projectCount">2</p>
+          <p class="text-xs text-zinc-500">Projects</p>
+        </div>
+        <div class="glass-card p-5 text-center">
+          <i class="fa-solid fa-planet-ringed text-2xl text-amber-400 mb-2"></i>
+          <p class="text-2xl font-bold" id="factCount">0</p>
+          <p class="text-xs text-zinc-500">Facts Learned</p>
+        </div>
+        <div class="glass-card p-5 text-center">
+          <i class="fa-solid fa-rocket text-2xl text-emerald-400 mb-2"></i>
+          <p class="text-2xl font-bold" id="planetClickCount">0</p>
+          <p class="text-xs text-zinc-500">Planet Clicks</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Let's Talk (asli, tidak berubah) -->
     <div class="mt-28 text-center section-fade">
       <h2 class="section-title mb-6">Let's Talk</h2>
       <p class="text-zinc-400 mb-10 max-w-sm mx-auto">
